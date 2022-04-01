@@ -1,0 +1,349 @@
+Windows 10
+--------
+C		C++			Java			word		Excel		Image
+First.c		First.cpp		First.java		app.docx	app.xlsx	photo.jpeg
+compilation				javac <FileName.java>
+First.exe	First.obj		First.class(JVM)
+Execution				java FileName
+
+Java 11 version
+
+javac 
+java
+java Filename.java
+
+MAC OS		| 	Linux OS
+-------------------------------------	
+First.exe	First.obj		First.class
+X		X			working
+
+pure case-sensitive language
+
+Employee - employee
+Pascal case
+Camel case
+
+{} - curly 		- create a block of statement
+() - parenthisis	- create a method
+[] - square 		- create an array	
+
+IDE - 
+Netbeans IDE
+Eclipse IDE
+IntelliJ IDE
+VSCode
+STS3 - Spring Tools Suite
+
+Workspace
+-----------
+Local  - Git Env.
+Remote - GitHub/Bitbucket
+
+e-shopping
+------------
+1. welcome page
+2. login
+3. dashboard
+4. gallery
+5. list of products
+6. price
+7. discounts
+8. user notification
+9. customer support
+10. chat
+11. shopping cart
+12. payment gateway
+13. feedback
+14. product rating
+15. reviews
+16. product compare
+17. product category
+18. tracking status
+
+Git
+------
+git init
+git add FileName
+git commit -m "commit message"
+First Time: git remote add origin <link>
+First Time: git push -u origin main
+------------
+
+Modify the existing file.
+---------------------------
+git add <fileName>
+git commit -m "commit message"
+git push
+
+Project Management Tools 
+-----------------------------
+1. To creae a project structure.
+2. To build the project for expected delivery format (jar/war)
+3. add dependency (jar file format)
+3.1. connect to database env. (mysql/oracle/postgre sql)
+3.2. Logging details
+4. Managed build & dependency as "pom.xml" (Project Object Model)
+
+Maven/Gradle
+Key features
+----------------
+groupId		- represent the packages(folder structure)
+artifactId	- represent the application (project name/title)
+version		- application version
+ 
+OOPs
+-----
+
+JDK vs JRE
+-------------
+
+class Car {
+  int modelNo;
+  String color;
+  String brand;
+  void setCarDetails() {
+    modelNo = 1201;
+    color = "black";
+    brand = "Honda City"
+  }
+}
+
+class Account {
+  int acctNo;
+  String accType;
+  String accStatus;
+  double accBalance;
+  double transferAmount;
+  void deposit() {
+
+  }
+  void withdraw() {
+
+  }
+}
+
+class Parent {
+  int a,b;
+  void doWork() { 
+    System.out.println("Business person");
+  }
+}
+class Child1 extends Parent {
+  @override
+  void doWork() { 
+    System.out.println("Bank Executive");
+  }
+}
+class Child2 extends Parent {
+  @override
+  void doWork() { 
+    System.out.println("Software Engineer");
+  }
+}
+
+
+class Demo {
+  void display() {
+    System.out.println("Generic Display method.");
+  }
+  void display(String name) {
+    System.out.println("Name is "+name);
+  }
+  void display(String fName, String lName) {
+    System.out.println("Name is "+fName+" "+lName);
+  }
+}
+
+
+					Java API
+
+	Java SE API			Java EE API			Java ME API
+	(Core Java)			(Advanced Java)			(Embedded Java)
+
+	1. console appl.		1. web appl.			1. chip-level appl.
+	2. windows appl. 		2. enterprise appl.
+	(applet, awt, swing)
+	3. Network appl.
+
+	java.lang			javax.servlet
+	java.io				javax.servlet.jsp
+	java.net			javax.ejb
+	java.sql			javax.mail
+	java.util			javax.transaction
+	java.text			javax.json
+	..				..
+	..				..
+	..				..
+
+Class
+-------
+
+class ClassName {		class ClassName {		class ClassName {
+ data;				  variables;			   variable declaration;
+ business logic;		  methods;			   method definition;
+}				}				}
+
+Declaration - A statement ends with semicolon (;)
+Definition - A statement extend by { ---- }
+
+{} 
+
+packages (folder structure)
+--------------
+java.lang. <Files.java>
+|__Runnable.java	-	Interface 
+|__Thread.java		-	class
+|__Number.java		-	abstract class
+|__Thread.State.java	-	enumeration
+|__Exception.java	-	Exception	
+|__Error.java		-	Error
+|__Override.java	-	Annotation
+java.io.
+java.util
+java.net
+java.sql
+java.text
+
+User-defined packages
+----------------------------
+Maven project environment
+|__src/main/java
+   |__com.comcast.basics
+   |__com.comcast.fundamentals
+
+Types of variable declaration:
+1. Primitive type		1. Primitive-->Reference variable(Wrapper classes)java.lang	
+   	boolean				Boolean	
+   	byte				Byte
+   	short 				Short
+   	int				Integer		
+   	long				Long
+   	float				Float
+   	double				Double
+   	char				Character
+2. Reference type
+	Except the 8 primitive keys, you can define any variable like
+	reference variable.
+	
+	String firstName;
+	Employee employee;
+	Customer customer;
+	Student student;
+	PrintStream out;
+	InputStream in;
+	Long empId;
+
+class EmployeePrimitive {			class EmployeeReference {
+  int empId;					   Integer empId;
+  long empSalary;				   Long empSalary;
+  boolean empStatus;				   Boolean empStatus;
+  char empGender;				   Character empGender;
+}						}
+
+Java API
+---------
+
+-128 to 127
+
+int a = -10;
+float b = -123.45f;
+char c = 'F';
+
+Scope of the Variable
+-------------------------
+
+class ClassName {
+  variable declaration;
+  method definition;	
+}
+
+class Employee {
+  int empId;			// Instance variable
+  String empName;		// applicable for initiate the default-value
+  double salary;		// can access any method inside the class and outside based on access specifier.
+  boolean status;
+  void displayDetails() {
+    String dob;			// local variable
+ 				// only perform within the method.
+				// automatically lost the value after exit the method execution
+  }
+  void method1() {
+    int m1;
+
+  }
+  void method2() {
+    long m2;	
+
+  }
+  void method3() {
+    short m3;
+
+  }
+}
+
+declared variables/methods	- camel case
+employeeId
+employee first name  -> employeeFirstName
+get employee details -> getEmployeeDetails()
+
+define class/interface/abstract-class name - pascal case
+Employee.java
+EmployeeBankDetails.java
+EmployeeProjectDetails
+AccountCreation
+
+package - lowercase alphabets (no spl. characters and numbers)
+
+int value = 12;		//decimal(10) value
+int value = 014;	//octal(8) value
+int value = 0xC;	//Hexa-decimal(16) value 0-9 A B C D E F
+
+float value = 1.256f;
+double value = 1.265d;
+double value = 3.56E2;
+
+int a = 10;
+a++;
+a--;
+++a;
+--a;
+int b = -a;	          // unary
+
+int b = 20
+int c = a + b;		  // binary 
+
+int big = (a>b) ? a : b;  // Ternary
+
+
+int a = 15	0000 1111
+int b = 5	0000 0101
+
+
+int c = a&b	0000 0101	--> 5
+int c = a|b	0000 1111	-->15
+int c = ~b;	1111 1010	-->
+int c = a^b	0000 1010	-->10
+
+
+a=a+1;	a+=1;	a++;
+
+a=a-10; a-=10;
+	a=-10;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,88 @@
+As you have already seen, testing is an essential part while developing an application or even a small code. Testing ensures that code is functioning properly for all possible cases.
+
+Manual testing of code is an error prone process and time consuming, especially when it comes to larger applications with increased code size. Thus, performing automated testing is more reliable and saves lot of time.
+
+There are several frameworks available for automating unit tests. JUnit and TestNG are among the popular ones for Java.
+
+In this course, you will be using JUnit.
+
+JUnit is an open-source unit testing framework for Java programming language. It provides classes to write and run automated tests.
+
+Features of JUnit
+
+open source framework used for writing and running tests
+
+less complex and takes less time
+
+provides immediate feedback
+
+shows test progress
+
+---
+
+Now that you have added the required JARs, you will now see how to implement testing using JUnit.
+
+After placing an order in SwiftFood, bill details have to be generated. Payment mode needs to be validated before generating the bill as the restaurant allows only five payment options - Credit Card, Debit Card, PayPal, Amazon Pay and Google Pay. You need to write automated test cases using JUnit for validating the payment mode.
+
+code here
+
+Working with JUnit starts with creation of test methods.
+
+A test method can either make assertions or expect exceptions.
+
+Assertions are statements which compare the expected results with actual results returned from the method.
+
+If they match, the test case passes else the test case fails.
+
+org.junit.Assert class is used for making assertions
+
+The org.junit.Assert class provides different methods to compare the expected result and actual result
+
+Any method that is written with assertions cannot be classified as a test method. To classify a method as a test method, you need to use the annotation org.junit.Test.
+
+Once a class has a test method, it is called a test class or a test case.
+
+Consider the test case given below.
+
+testing code here..
+
+The above test method validatePaymentOptionTestValid() tests a condition for the validatePaymentOption() of the Bill class. If the method has been properly implemented, then the method will return true and the test will pass.
+
+The Assert class provides static methods for testing a variety of conditions. These methods accept actual and expected results for comparison and determine whether a test method will pass or fail.
+
+When a test fails, the test method throws an AssertionException. Optional error messages can be specified for Assertion exceptions. These exceptions are caught by JUnit and their messages are displayed.
+
+Here are some useful methods of the Assert class:
+
+table..
+
+
+
+Test cases (test classes) can be run as a JUnit test as shown below.
+
+Right click on the file and select 'Run As'->'Junit Test'.
+
+The JUnit Runner is responsible for constructing the instances of the test classes before running the tests. It is also responsible for making them available for garbage collection after the tests.
+
+
+The image given below shows the JUnit report. It provides:
+
+number of test methods executed
+
+number of test methods having errors
+
+number of failures among the test methods
+
+list of all the test methods
+
+failure trace, in case of any failure
+
+final test status with color coding
+
+green, if all the test cases pass
+
+red, if any test case fails
+
+Now that you have added the required JARs, you will now see how to implement testing using JUnit.
+
+After placing an order in SwiftFood, bill details have to be generated. Payment mode needs to be validated before generating the bill as the restaurant allows only five payment options - Credit Card, Debit Card, PayPal, Amazon Pay and Google Pay. You need to write automated test cases using JUnit for validating the payment mode.

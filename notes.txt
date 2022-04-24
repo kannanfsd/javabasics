@@ -536,6 +536,56 @@ car.drive();
 car = new BMW();
 car.drive();			// Run-time polymorphism
 
+-------------------
+Exception Handling - 22/04/2022
+
+
+Java API	SE / EE / ME
+
+
+class extends Object 		abstract classs		interface	exception class(similar to class)
+clsss A
+class B extends A
+class C extends Thread(java.lang)					class NameException extends Exception(java.lang)
+
+
+What is an Exception?
+-wrong input at a time 
+-Try to read files from any specific directory 
+-Try to store the files 
+-Try to connect database
+
+Exception handling mechanism 
+	1. try/catch/finally	block
+	2. throws (throw - explicitly raise the exception instance)	
+
+Checked 				|				UnChecked
+
+java.lang.Object
+|
+java.lang.Throwable (C)				
+|__Error (Out of control)
+|__Exception (fully java developer responsible one)
+   |__IOException
+   |__SQLException
+   |__InterruptedException
+   |__RuntimeException
+      |__ArithmeticException
+      |__NullPointerException
+      |__IndexOutOfBoundException
+	 |__ArrayIndexOutOfBoundException
+	 |__StringIndexOutOfBoundException
+
+
+directly derived from Exception class, i.e., Checked Exception class		it's force to programmer to handle with handler(either 1 or 2_		
+	 derived from RuntimeException class, i.e., unchecked exception class	optional to handle the handler 
+
+1000 ms   -- 1 sec
+60 sec    -- 1 min
+60 min    -- 1 hour
+   			
+
+		
 
 
 

@@ -584,13 +584,107 @@ directly derived from Exception class, i.e., Checked Exception class		it's force
 60 sec    -- 1 min
 60 min    -- 1 hour
    			
+Collections - Java API 		25/04/2022	
+--------------------------
+java.util - package 
+class		abstract class		interface		exception-classes
+Phase-I
+						Collection(I)	-	java.util	add(obj)/iterator()- Iterator					
+					     	      | extends
+	--------------------------------------------------------------------------------------------
+       | extendds			              | extends					    | extends
+   List(I) add(index, obj)			   Queue(I)				           Set(I)	manage()
+       |											    | extends__________________
+       |										           SortedSet(I)	sort()	       |	
+       |											    | extends		       |	
+       |											   NavigableSet(I)	       |	
+       |											    | implements	       |	
+ _____________________________________								   TreeSet(c)		       |	
+| implements	  | implements	      | implements							___________________________________		       	
+ArrayList(c)	LinkedList(c)	    Vector(c)  							       | implements			   | implements
+			              | extends							   Hashset(c)	   		    LinkedHashset(c)
+				    Stack(c)
+
+interface Collection{}
+interface List extends Collection{}							/// <E> - Generics
+inteface Queue extends Collection{}
+interface Set extends Collection{}
+interface SortedSet extends Set{}
+interface NavigableSet extends SortedSet{}
+
+class ArrayList implements List{}
+class LinkedList implements List{}
+class Vector implements List{}
+class Stack extends Vector{}
+
+class Hashset implements Set{}
+class LinkedHashset implements Set{}
+
+
+Phase-II					    Map(I)
+						      |
+	_______________________________________________----------------------------------------------
+       |		| implements		       | implements				     | extends
+    HashMap(c)	    Hashtable(c)		LinkedHashMap(c)				SortedMap(I)
+			| extends 								     | extends
+		    Properties(c)								NavigableMap(I)
+												     | implements
+												TreeMap(c)													     			
+
+
+Java API
+---------
+Primitive type --------------------->	Wrapper type	---------Array-------->	Collection Framework
+boolean					Boolean
+byte					Byte		int[10] empId;		List employee; 
+short					Short
+int					Integer
+long					Long
+float					Float
+double					Double
+char					Character	
 
 		
+List fruits = new ArrayList();
+fruits.add("apple");
+fruits.add("orange");
+fruits.add("grapes");
+
+List vegetables = new ArrayList();
+vegetables.add("ab");
+vegetables.add("ca");
+vegetables.add("br");
+
+List grocery = new ArrayList();
+grocery.addAll(fruits)
+grocery.addAll(vegetables);
+
+grocery.contains("apple")		// return true
+grocery.containsAll(fruits)		// return true
+
+Iterator itGrocery = grocery.iterator();
+
+while(itGrocery.hasNext())
+{
+ Sysout(itGrocery.next());
+}
 
 
+java.sql		-	Date(c)
+java.util		- 	Date(c)
 
 
+java.lang		-	Iterable	
+java.util		-	Iterator(I)	it allows to iterate the collection(list or set or queue) elements
+				|__hasNext() - boolean
+				|__next() - Element(Object)	
 
+
+add(Object)
+addAll(Collection)
+
+put(Object, Object)
+putAll(Map)
 
 
 

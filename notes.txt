@@ -686,6 +686,40 @@ addAll(Collection)
 put(Object, Object)
 putAll(Map)
 
+MultiThreading			27/04/2022
+-------------------
+java.lang.Thread
+java.lang.Runnable
+--------------
+
+public interface Runnable {
+ public void run();
+}
+
+In Thread managed by Thread Priority level
+class Thread {
+	static int MIN_PRIORITY = 1;
+	static int NORM_PRIORITY = 5;	//By default
+	static int MAX_PRIORITY = 10;	
+
+
+Thread class
+	Thread()
+	Thread(String name)
+	Thread(Runnable r) 
+	Thread(Runnable r, String name) <--
+
+
+	run() <--- start()
+	
+Runnable 	vs 	Thread
+---------------------------------------
+interface	vs	class
+			extend this thread not able to extend another 
+implement this interface you can extend one more class
+
+
+
 
 
 

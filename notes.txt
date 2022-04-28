@@ -719,6 +719,107 @@ interface	vs	class
 implement this interface you can extend one more class
 
 
+fails if the test condition results in false
+fails if the test condition results in true
+fails if the object is not null
+fails if the object is null
+
+returns an object of ExpectedException that expects no exceptions, i.e., an empty rule
+verifies that a code throws a specified exception
+verifies that a code throws an exception with a message containing the specified text
+
+DBMS
+RDBMS	(Relational(Table(RowsXColumns)) Database Management System)
+---------
+create user 'comcast'@'localhost' identified by 'comcast';
+grant all privileges on *.* to 'comcast'@'localhost';
+
+create database ibank;
+use ibank;
+
+create table employee(id int auto_increment, 
+		      ename varchar(40), 
+		      designation varchar(40), 
+                      email varchar(40), 
+                      dob date,
+                      primary key(id));
+    **Date pattern in MySQL - YYYY-MM-DD**                  
+insert into employee(id, ename, designation, email, dob) values(12001, 'kannan', 'SE', 'kannan@comcast.com', '1990-05-23');
+insert into employee(ename, designation, email, dob) values('mathi', 'HR', 'mathi@comcast.com', '1992-09-17');
+insert into employee(ename, designation, email, dob) values('ganesh', 'SSE', 'ganesh@comcast.com', '1986-11-12');
+select * from employee;
+
+Java API	SE / EE / ME			
+--------------------------------
+class/abstract class/interface/exception-class - pre-defined/user-defined
+
+Java Application connect with DB(MySQL) 
+Java talks to MySQL via Query Logic
+MySQL response back to Java
+
+Step 1: To add mysql-connector.jar file in java developement environment.
+Step 2: learn about java.sql package 
+Step 3: Intro. about the java resources
+	1. Driver(I)
+	2. DriverManager(c)
+	3. Connection(I)
+--------------------------------------------------------------- common for all kind of database transaction
+	4. Statement(I)
+	   |__PreparedStatement(I)
+	      |__CallableStatement(I)
+	5. ResultSet(I)
+	6. SQLException(c) - Checked Exception
+Step 4: Create Driver instance, mysql-connector.jar -- com.mysql.jdbc
+						       |__ Driver(c)
+							import java.sql.Driver;
+							class Driver implements Driver {
+
+ 							}
+	Driver(I) driver = new com.mysql.jdbc.Driver();
+Step 5: Register the driver instance in DriverManager class
+	
+	DriverManager.registerDriver(driver);
+	
+Step 6: Database URL: 		jdbc:mysql://localhost:3306/ibank
+	Database username:	comcast
+	Database password:	comcast
+	Establish the connection between MySQL Database.
+				       |-- static method
+	Connection con = DriverManager.getConnection(URL, username, password);
+	|__Statement createStatement()
+	|__PreparedStatement prepareStatement(String)
+	|__CallableStatement prepareCall(String)
+--------------------------------------------------------------------------------------common procedure
+Step 7: write a query static/dynamic/pl\sql
+	Static Query: select ename, designation, dob, email from employee;
+	dynamic Query:select ename, designation, dob, email from employee where id=?
+		      insert into employee(ename, email) values(?,?)
+	create Statement instance via Connection object.
+	Statement stmt = con.createStatement();
+	|__ execute(query)	 //create/alter/truncate/drop/rename (DDL), DCL(grant/revoke), TCL(commit/rollback)
+	|__ executeUpdate(query) // insert/update/delete/merge	(DML)
+	|__ executeQuery(query)	 // write select query	(DQL)
+	
+	create PreparedStatement instance via Connection object
+	PreparedStatement pstmt = con.prepareStatement(query);
+	|__ boolean execute()
+	|__ int executeUpdate()
+	|__ ResultSet executeQuery()	
+
+Step 8: Create the ResultSet instance when you're run the select query
+	ResultSet rs = pstmt.executeQuery();
+
+Step 9: should close create instances.
+	rs.close()
+	pstmt.close()
+	con.close()
+
+
+
+
+
+
+
 
 
 
